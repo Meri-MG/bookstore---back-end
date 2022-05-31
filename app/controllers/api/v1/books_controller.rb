@@ -20,6 +20,20 @@ class Api::V1::BooksController < ApplicationController
     head :no_content
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def updated
+    respond_to do |format|
+      if @book.update(book_params)
+        format.json { render :show, status: :ok, location: @book }
+      else
+        format.json { render json: @book.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private 
 
   def book_params
