@@ -14,7 +14,7 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def destroy
-    category.find(params[:id]).destroy!
+    Category.find(params[:id]).destroy!
 
     head :no_content
   end

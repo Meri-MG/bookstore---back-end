@@ -1,6 +1,7 @@
-class CommentsController < ApplicationController  
+class Api::V1::CommentsController < ApplicationController  
   def index
-    render json: Comment.all
+    comments = Book.find(params[:book_id]).comments;
+    render json: comments
   end
 
   def create
@@ -15,9 +16,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find(params[:comment_id])
+    comment = Comment.find(params[:id])
     comment.book.decrement!(:comments_counter)
-    comment.destroy
+    comment.destroy!
 
     head :no_content
   end
@@ -25,6 +26,6 @@ class CommentsController < ApplicationController
   private
 
   def comments_params
-    params.require(:comment).permit(:text)
+    params.require(:comment).permit(:text, :book_id)
   end
 end
