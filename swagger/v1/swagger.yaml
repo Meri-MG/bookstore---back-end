@@ -35,8 +35,8 @@ paths:
                       type: string
                     chapter:
                       type: integer
-                    category_id:
-                      type: integer
+                    category:
+                      type: string
               required:
               - title
               - author

@@ -31,7 +31,7 @@ RSpec.describe 'api/v1/books', type: :request do
                     title: { type: :string },
                     author: { type: :string },
                     chapter: { type: :integer },
-                    category_id: { type: :integer}
+                    category: { type: :string}
                   } }
         },
         required: %w[title author chapter category]
