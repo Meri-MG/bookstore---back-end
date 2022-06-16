@@ -30,9 +30,10 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def update
+    book = Book.find(params[:id])
     respond_to do |format|
       if book.update(book_params)
-        format.json { render :show, status: :ok, location: book }
+        format.json { render json: book, status: :ok }
       else
         format.json { render json: book.errors, status: :unprocessable_entity }
       end
@@ -42,6 +43,6 @@ class Api::V1::BooksController < ApplicationController
   private 
 
   def book_params
-    params.require(:book).permit(:title, :author, :chapter, :category)
+    params.require(:book).permit(:title, :author, :chapter, :category, :id)
   end
 end

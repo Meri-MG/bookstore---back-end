@@ -1,4 +1,10 @@
+require "application_responder"
+
 class ApplicationController < ActionController::API
+  include ActionController::MimeResponds
+  self.responder = ApplicationResponder
+  respond_to :html, :json
+
   rescue_from ActiveRecord::RecordNotDestroyed, with: :not_destroyed
 
   private

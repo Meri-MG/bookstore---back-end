@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   namespace :api do
-    namespace :v1 do
+    namespace :v1, defaults: {format: 'json'} do
       resources :books do
-        resources :comments, only: [:create, :destroy, :index]
+        resources :comments, only: [:index, :destroy, :create, :update]
       end
-      resources :categories, only: [:index, :destroy, :create]
+      resources :categories, only: [:index, :destroy, :create, :update]
     end
   end
 end
