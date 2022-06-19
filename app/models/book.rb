@@ -7,5 +7,4 @@ class Book < ApplicationRecord
   validates :author, presence: true, length: {minimum: 3}
   validates :title, presence: true, length: {minimum: 3}
   validates :category, presence: true, length: {minimum: 3}
-  validates :chapter, presence: true
 end
