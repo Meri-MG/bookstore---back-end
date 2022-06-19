@@ -3,6 +3,8 @@ class Comment < ApplicationRecord
 
   after_create :update_comments_count
 
+  validates :text, presence: true, length: {minimum: 3}
+
   private
 
   def update_comments_count
