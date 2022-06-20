@@ -1,0 +1,189 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/books":
+    get:
+      summary: list books
+      tags:
+      - books
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create book
+      tags:
+      - books
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                book:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    author:
+                      type: string
+                    chapter:
+                      type: integer
+                    category:
+                      type: string
+              required:
+              - title
+              - author
+              - chapter
+              - category
+  "/api/v1/books/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show book
+      tags:
+      - books
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update book
+      tags:
+      - books
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update book
+      tags:
+      - books
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete book
+      tags:
+      - books
+      responses:
+        '200':
+          description: successful
+  "/api/v1/categories":
+    get:
+      summary: list categories
+      tags:
+      - categories
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create category
+      tags:
+      - categories
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                category:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+              required:
+              - name
+  "/api/v1/categories/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete category
+      tags:
+      - categories
+      responses:
+        '200':
+          description: successful
+  "/api/v1/books/{book_id}/comments":
+    parameters:
+    - name: book_id
+      in: path
+      description: book_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list comments
+      tags:
+      - comments
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create comment
+      tags:
+      - comments
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+                    book_id:
+                      type: integer
+              required:
+              - text
+              - book_id
+  "/api/v1/books/{book_id}/comments/{id}":
+    parameters:
+    - name: book_id
+      in: path
+      description: book_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: delete comment
+      tags:
+      - comments
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: 127.0.0.1:3000/
