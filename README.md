@@ -1,24 +1,63 @@
-# README
+# Budget App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> The Rails Api was built for single-page-app [Bookstore](https://github.com/Meri-MG/bookstore---react). It allows users to perform all the CRUD functionalities.
 
-Things you may want to cover:
+> The project is following data model below: 
+> 
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby
+- Ruby on Rails
+- PostgreSQL
 
-* Configuration
+## Live Demo 
 
-* Database creation
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+- [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your local machine 
+- [Install Ruby on Rails](https://guides.rubyonrails.org/v5.1/getting_started.html)
+- Clone [this repository](https://github.com/Meri-MG/bookstore---back-end)
+  ```
+  git clone git@github.com:Meri-MG/bookstore---back-end.git
+  ```
+- To get started, In the root directory run:
+  ```
+  gem install bundler
+  ```
+  Then run:
+  ```
+  bundle install
+  ```
+  To start the server run: 
 
-* Services (job queues, cache servers, search engines, etc.)
+  ```
+  rails s
+  ```
+  Open the browser with `localhost:3000`
 
-* Deployment instructions
+  
+## After installing bundle
 
-* ...
+Please run the following commands `rails db:create` `rails db:migrate` `rails s`
+
+## Author
+
+:woman: **Meri Gogichashvili**
+
+- [GitHub](https://github.com/Meri-MG)
+- [LinkedIn](https://www.linkedin.com/in/meri-gogichashvili/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Meri-MG/bookstore---back-end/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- Thanks to my learning partners.

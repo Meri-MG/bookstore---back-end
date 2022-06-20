@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-  resources :books, only: :index
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+  namespace :api do
+    namespace :v1, defaults: {format: 'json'} do
+      resources :books do
+        resources :comments, only: [:index, :destroy, :create, :update]
+      end
+      resources :categories, only: [:index, :destroy, :create, :update]
+    end
+  end
 end
