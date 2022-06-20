@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
-  root to: 'books#index'
+  root 'pages#index'
   namespace :api do
     namespace :v1, defaults: {format: 'json'} do
       resources :books do

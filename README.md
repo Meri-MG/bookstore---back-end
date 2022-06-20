@@ -3,7 +3,7 @@
 > The Rails Api was built for single-page-app [Bookstore](https://github.com/Meri-MG/bookstore---react). It allows users to perform all the CRUD functionalities.
 
 > The project is following data model below: 
-> 
+> ![ERDDIAGRAM](https://raw.githubusercontent.com/Meri-MG/bookstore---back-end/dev/erd.png)
 
 ## Built With
 
@@ -13,7 +13,8 @@
 
 ## Live Demo 
 
-
+- [Swagger documentation for API](https://protected-taiga-25036.herokuapp.com/api-docs/index.html)
+- [Live](https://protected-taiga-25036.herokuapp.com/api/v1/books)
 ## Getting Started
 
 - [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) on your local machine 
